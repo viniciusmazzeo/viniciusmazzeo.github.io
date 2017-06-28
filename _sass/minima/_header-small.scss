@@ -1,0 +1,151 @@
+/* HEADER SMALL*/
+
+ /**
+ * Site header
+ */
+.site-header {
+	min-height: $spacing-unit * 1.865;
+	position: fixed;
+    width: 100%;
+
+	 .wrapper{
+	  	display: flex;
+		align-items: center;
+		min-height: 60px;
+		
+		@include media-query($on-palm) {
+			background-color: #d74a5b;
+			-webkit-box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
+			-moz-box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
+			box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
+			.logo-header{
+				width: 100px;
+				height: auto;
+			}
+
+			.menu_opener {
+			  display: none;
+			}
+			.menu_opener:checked ~ {
+			  .barre_hamburger {
+			  opacity: 0;
+			  }
+			  .menu_opener_label {
+			    &:after {
+			     transform:rotate(45deg); 
+			     top: 70px;
+			    }
+			    &:before {
+			     transform:rotate(-45deg);
+			     top: 70px;
+			    }
+			  }
+			  .trigger{
+			  	background-color: rgba(0,0,0,0.6);
+				width: 100%;
+				display: block;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				height: 100vh;
+				display: block;
+				a{
+					display: block;
+					color: #fff;
+					font-size: 3em;
+					visibility: initial;
+					&:first-child{
+						padding-top: 50px;
+					}
+					&:hover{
+						color: #d74a5b;
+						text-decoration: none;
+					}
+				}
+			  }
+			}
+			.menu_opener_label {
+			  	display: block;
+				cursor: pointer;
+				border-radius: 50%;
+				position: absolute;
+				top: -43px;
+				right: 0px;
+				z-index: 10;
+				width: 70px;
+				height: 100px;
+
+				&:after {
+				    position: absolute;
+				    top: 55px;
+				    left: 10px;
+				    background: #fff;
+				    content: "";
+				    width: 50px;
+				    height: 5px;
+				    -webkit-transition: all .4s ease ;
+				    transition: all .4s ease ;
+			  	}
+			  	&:before {
+				    position: absolute;
+				    top: 85px;
+				    left: 10px;
+				    background: #fff;
+				    content: "";
+				    width: 50px;
+				    height: 5px;
+				    -webkit-transition: all .8s ease ;
+				    transition: all .8s ease ;
+		  		}
+			}
+
+			.barre_hamburger {
+			   	width: 50px;
+				height: 5px;
+				position: absolute;
+				top: 28px;
+				right: 10px;
+				background: #fff;
+				z-index: 20;
+				-webkit-transition: all 0.4s ease;
+				transition: all 0.4s ease;
+
+			}
+			.trigger{
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 0;
+				-webkit-transition: all .4s ease ;
+				transition: all .4s ease ;
+				background-color: #000000b3;
+				width: 100%;
+				text-align: center;
+
+				a{
+					display: block;
+					font-size: 0em;
+					font-weight: 300;
+					padding: 0px;
+					color: #fff;
+					visibility: hidden;
+					-webkit-transition: all .4s ease ;
+					transition: all .4s ease ;
+					color: #fff0;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+ 	
+
+
+ 
+
+
