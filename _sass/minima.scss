@@ -11,8 +11,8 @@ $base-line-height: 1.5 !default;
 $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
-$background-color: #fdfdfd !default;
-$brand-color:      #2a7ae2 !default;
+$background-color: #fff !default;
+$brand-color:      #d74a5b !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -39,6 +39,29 @@ $on-laptop:        800px !default;
 
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
+}
+
+%titulo-home{
+  font-weight: 200;
+  color: #d74a5b;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+%texto-home{
+  font-weight: 200;
+  color: #5a5a5a;
+  margin-top: 20px;
+}
+
+%center-mobile{
+  text-align: center;
+}
+
+%base-section-home{
+    padding: 10px;
+    height: 100vh;
+    display:block;
 }
 
 // Import partials.

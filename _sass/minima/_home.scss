@@ -1,4 +1,4 @@
-.firt-home{
+.first-home{
 	background-image: url(/assets/images/bgTopoHome.png);
     display: flex;
     padding: 10px;
@@ -13,7 +13,29 @@
     		width: 100;
     	}
     }
+    p{
+    	@extend %texto-home;
+    }
     @include media-query($on-palm) {
     	text-align: center;
-    }
+   	}
+}
+
+.first-about{
+    @extend %base-section-home;
+	h2{
+		@extend %titulo-home;
+	}
+	p{
+		@extend %texto-home;
+	}
+
+	@include media-query($on-palm) {
+		text-align: center;
+
+		img{
+			width: 50%;
+    		margin-top: 10px;
+		}
+	 }
 }
