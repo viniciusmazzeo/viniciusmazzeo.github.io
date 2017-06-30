@@ -2,7 +2,7 @@
 	background-image: url(/assets/images/bgTopoHome.png);
     display: flex;
     padding: 10px;
-    height: 100vh;
+    @extend %base-section-home-height;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -23,6 +23,7 @@
 
 .first-about{
     @extend %base-section-home;
+    @extend %base-section-home-height;
 	h2{
 		@extend %titulo-home;
 	}
@@ -38,4 +39,70 @@
     		margin-top: 10px;
 		}
 	 }
+}
+
+.first-portifolio{
+    @extend %base-section-home;
+    background-color: #fbfbfb;
+
+	h2{
+		@extend %titulo-home;
+	}
+	p{
+		@extend %texto-home;
+		margin:0px;
+	}
+
+	h3{
+		color: $brand-color;
+		padding: 10px;
+		margin:0px;
+	}
+
+	.jobs{
+		background-color:#e8e6e6;
+		-webkit-box-shadow: 10px 11px 32px -22px rgba(0,0,0,0.69);
+		-moz-box-shadow: 10px 11px 32px -22px rgba(0,0,0,0.69);
+		box-shadow: 10px 11px 32px -22px rgba(0,0,0,0.69);
+		padding-bottom: 20px;
+	}
+	@include media-query($on-palm) {
+		text-align: center;
+		.jobs{
+		    width: 90%;
+    		margin: 0 auto;
+    	}
+	 }
+}
+
+.first-services{
+	@extend %base-section-home;
+	h2{
+		@extend %titulo-home;
+	}
+	
+	.type-jobs{
+		margin: 35px 0px;
+		.boxSVG{
+			width: 30%;
+			margin: 0 auto;
+		}
+		h3{
+			color: #4a4a4a;
+			font-weight: 200;
+			font-size: 1.5em;
+			margin-bottom: 0px;
+			span{
+				color: #979595;
+			}
+		}
+		p{
+			color: #979595;
+			font-weight: 200; 
+
+		}
+	}
+	@include media-query($on-palm) {
+		text-align: center;
+	}
 }

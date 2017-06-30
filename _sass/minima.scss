@@ -51,7 +51,7 @@ $on-laptop:        800px !default;
 %texto-home{
   font-weight: 200;
   color: #5a5a5a;
-  margin-top: 20px;
+       margin-top: 20px;
 }
 
 %center-mobile{
@@ -59,9 +59,12 @@ $on-laptop:        800px !default;
 }
 
 %base-section-home{
-    padding: 10px;
-    height: 100vh;
+    padding: 40px 10px;
     display:block;
+}
+
+%base-section-home-height{
+  height: 100vh;
 }
 
 // Import partials.
