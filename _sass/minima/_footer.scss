@@ -1,8 +1,7 @@
 .site-footer{
 	background-color: #d74a5b;
-	img{
-		padding: 15px 0px 10px 0px;
-	}
+	padding-top: 15px;
+
 	ul{
 		li{
 			display: inline;
@@ -16,7 +15,7 @@
 	p{
 		font-weight: 200;
 		color: #ffffff;
-		font-size: 0.8em;
+		font-size: 0.7em;
 	}
 	@include media-query($on-palm) {
 		text-align: center;
