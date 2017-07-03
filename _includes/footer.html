@@ -44,3 +44,15 @@
   </div>
 
 </footer>
+
+<script src="/assets/scripts/jquery-3.2.1.min.js"></script>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.skillbar').each(function(){
+      jQuery(this).find('.skillbar-bar').animate({
+        width:jQuery(this).attr('data-percent')
+      },6000);
+    });
+  });
+</script>
+

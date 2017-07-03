@@ -106,3 +106,59 @@
 		text-align: center;
 	}
 }
+
+.first-habilit{
+	@extend %base-section-home;
+	background-color: #fbfbfb;
+	h2{
+		@extend %titulo-home;
+	}
+	.skillbar {
+		display:block;
+		margin-bottom:15px;
+		width:100%;
+		border-radius:3px;
+		-moz-border-radius:3px;
+		-webkit-border-radius:3px;
+		-webkit-transition:0.4s linear;
+		-moz-transition:0.4s linear;
+		-ms-transition:0.4s linear;
+		-o-transition:0.4s linear;
+		transition:0.4s linear;
+		-webkit-transition-property:width, background-color;
+		-moz-transition-property:width, background-color;
+		-ms-transition-property:width, background-color;
+		-o-transition-property:width, background-color;
+		transition-property:width, background-color;
+		background-color:#ebebeb;
+	}
+
+	.skillbar-title{
+		background-color: #fbfbfb;
+	}
+
+	.skillbar-title span {
+		font-weight: 200;
+		font-size: 1.6em;
+	}
+
+	.skill-bar-title{
+		color:#494747;
+	}
+
+	.skillbar-bar {
+		height: 10px;
+		width:0px;
+		background:#6adcfa;
+		border-radius:3px;
+		-moz-border-radius:3px;
+		-webkit-border-radius:3px;
+	}
+
+	.skill-bar-percent {
+		color:#adadad;
+	}
+	@include media-query($on-palm) {
+		text-align: center;
+	}
+}
