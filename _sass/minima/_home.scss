@@ -162,3 +162,22 @@
 		text-align: center;
 	}
 }
+.first-contact{
+	@extend %base-section-home;
+	h2{
+		@extend %titulo-home;
+	}
+	.email-home{
+		margin-bottom: 20px;
+		img{
+			width: 8%;
+		}
+		span{
+			color: #979595;
+			font-weight: 200; 
+		}
+	}
+	@include media-query($on-palm) {
+		text-align: center;
+	}
+}

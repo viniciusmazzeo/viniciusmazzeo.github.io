@@ -1,0 +1,24 @@
+.site-footer{
+	background-color: #d74a5b;
+	img{
+		padding: 15px 0px 10px 0px;
+	}
+	ul{
+		li{
+			display: inline;
+			margin: 0px 2px;
+			img{
+				width: 6%;
+				padding:0px;
+			}
+		}
+	}
+	p{
+		font-weight: 200;
+		color: #ffffff;
+		font-size: 0.8em;
+	}
+	@include media-query($on-palm) {
+		text-align: center;
+	}
+}

@@ -221,23 +221,22 @@ layout: default
     </div>
   </div>
 </section>
-  
-  
- 
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-
+<section class="first-contact">
+  <div class="wrapper">
+    <h2>< Contato /></h2>
+      <div class="email-home">
+        <img src="/assets/images/envelope.svg" alt="">
+        <span>viniciusmazzeo@gmail.com</span>
+      </div>
+      <div class="email-home">
+        <img src="/assets/images/skype-logo.svg" alt="">
+        <span>skype: viniciusmazzeo</span>
+      </div>
+      <div class="email-home">
+        <img src="/assets/images/whatsapp.svg" alt="">
+        <span>+55 19 991268380</span>
+      </div>
+      
+  </div>
+</section>
 </div>
