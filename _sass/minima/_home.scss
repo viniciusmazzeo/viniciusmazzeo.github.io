@@ -55,11 +55,7 @@
 		margin:0px;
 	}
 
-	h3{
-		color: $brand-color;
-		padding: 10px;
-		margin:0px;
-	}
+	
 
 	.jobs{
 		background-color:#e8e6e6;
@@ -67,12 +63,19 @@
 		-moz-box-shadow: 10px 11px 32px -22px rgba(0,0,0,0.69);
 		box-shadow: 10px 11px 32px -22px rgba(0,0,0,0.69);
 		padding-bottom: 20px;
+
+		h3{
+			color: $brand-color;
+			padding: 10px;
+			margin:0px;
+		}
 	}
 	@include media-query($on-palm) {
 		text-align: center;
 		.jobs{
 		    width: 90%;
     		margin: 0 auto;
+    		margin-bottom: 20px;
     	}
 	 }
 }
