@@ -23,7 +23,6 @@
 
 .first-about{
     @extend %base-section-home;
-    @extend %base-section-home-height;
 	h2{
 		@extend %title-sections-pages;
 		@extend %title-h2-default;

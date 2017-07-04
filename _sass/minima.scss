@@ -45,6 +45,7 @@ $on-laptop:        800px !default;
 
 %title-sections-pages{
   color:$brand-color;
+  font-size: 3em;
 }
 
 %title-h2-default{
@@ -79,5 +80,6 @@ $on-laptop:        800px !default;
   "minima/home",
   "minima/footer",
   "minima/about",
-  "minima/jobs"
+  "minima/jobs",
+  "minima/posts"
 ;

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<section class="lista-posts">
+	<header class="page-header">
+	    <h1 class="page-title">< {{ page.title | escape }} /></h1>
+	</header>
+
+	{% for post in site.posts %}
+
+		<article class="post">
+			<div class="post-content">
+			    <time class="post-date">{{ post.date | date_to_string }}</time>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title"> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+			</header>
+
+		  {{ post.excerpt }}
+
+		</article>
+
+	{% endfor %}
+</section>
