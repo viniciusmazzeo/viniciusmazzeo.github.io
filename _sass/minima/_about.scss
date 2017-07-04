@@ -1,0 +1,14 @@
+section.about{
+	@extend %base-section-home;
+
+	header.page-header{
+
+		h1.page-title{
+			@extend %title-sections-pages;
+		}
+	}
+
+	@include media-query($on-palm) {
+		text-align: center;
+	}
+}

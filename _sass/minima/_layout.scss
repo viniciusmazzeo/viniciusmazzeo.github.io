@@ -73,6 +73,9 @@
 /**
  * Page content
  */
+.page-header {
+  margin-top: $margin-top-header-page
+}
 
 .page-heading {
   @include relative-font-size(1.25);
