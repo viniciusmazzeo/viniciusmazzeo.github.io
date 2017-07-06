@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="contato">
+	<article class="post">
+
+	  	<header class="page-header">
+	    	<h1 class="page-title">< {{ page.title | escape }} /></h1>
+	  	</header>
+		<h3>Deixa sua mensagem!</h3>
+		<form action="https://formspree.io/viniciusmazzeo@gmail.com"
+		  method="POST">
+			<input type="text" name="_replyto" placeholder="Nome:" >
+			<input type="email" name="_replyto" placeholder="Email:" >
+			<input type="number" name="_replyto" placeholder="Telefone:" >
+			<textarea name="_replyto" placeholder="Mensagem:"></textarea>
+			<input type="hidden" name="_subject" value="Email de Contato Vinicius Mazzeo!" />
+			<input type="hidden" name="_next" value="//site.io/thanks.html" />
+			<input type="submit" value="Send" class="btn-envia-form">
+		</form>
+	  
+	</article>
+</section>

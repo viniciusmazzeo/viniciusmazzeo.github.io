@@ -58,7 +58,7 @@ section.posts{
 	@extend %base-section-home;
 
 	header.post-header{
-
+		margin-top: $margin-top-header-page;
 		h1.post-title{
 			@extend %title-sections-pages;
 			font-size: 2.5em;
