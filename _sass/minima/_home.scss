@@ -88,7 +88,8 @@
 		padding-bottom: 20px;
 		text-align: center;
 		float: left;
-		margin: 20px 14px;
+		margin: 20px 8px;
+		width: 23%;
 
 		h3{
 			color: $brand-color;
@@ -120,6 +121,7 @@
 	@extend %base-section-home;
 	text-align: center;
 	h2{
+		@extend %titulo-h2-tablet;
 		@extend %title-sections-pages;
 		@extend %title-h2-default;
 	}
@@ -162,6 +164,7 @@
 	background-color: #fbfbfb;
 	text-align: center;
 	h2{
+		@extend %titulo-h2-tablet;
 		@extend %title-sections-pages;
 		@extend %title-h2-default;
 	}
@@ -218,8 +221,10 @@
 	@extend %base-section-home;
 	text-align: center;
 	h2{
+		@extend %titulo-h2-tablet;
 		@extend %title-sections-pages;
 		@extend %title-h2-default;
+		
 	}
 	.email-home{
 		margin-bottom: 20px;
