@@ -1,23 +1,40 @@
-/* HEADER SMALL*/
-
- /**
- * Site header
- */
 .site-header {
 	min-height: $spacing-unit * 1.865;
 	position: fixed;
     width: 100%;
+    background-color: #d74a5b;
+	-webkit-box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
+	-moz-box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
+	box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
 
 	 .wrapper{
 	  	display: flex;
 		align-items: center;
 		min-height: 60px;
+	
+		.logo-header{
+			width: 10%;
+    		text-align: center;
+		}
+		.site-nav{
+			width: 90%;
+    		padding: 0 20px;
+
+    		input{
+    			display: none;
+    		}
+
+    		.trigger{
+    			a.page-link{
+    				color: #fff;
+    				font-size: 1.1em;
+    				padding: 15px;
+    			}
+    		}
+		}
 		
 		@include media-query($on-palm) {
-			background-color: #d74a5b;
-			-webkit-box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
-			-moz-box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
-			box-shadow: -4px 26px 17px -22px rgba(0,0,0,0.13);
+			
 			.logo-header{
 				width: 100px;
 				height: auto;

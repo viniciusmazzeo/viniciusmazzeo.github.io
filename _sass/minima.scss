@@ -26,13 +26,6 @@ $content-width:    1024px !default;
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
@@ -56,6 +49,10 @@ $on-laptop:        800px !default;
   color: #5a5a5a;
   margin-top: 20px;
 }
+%textos-desk{
+  font-size: 1.6em;
+  text-align: center;
+}
 
 %center-mobile{
   text-align: center;
@@ -68,6 +65,10 @@ $on-laptop:        800px !default;
 
 %base-section-home-height{
   height: 100vh;
+}
+
+%titulo-h2-tablet{
+  font-size: 3em;
 }
 
 // Import partials.
