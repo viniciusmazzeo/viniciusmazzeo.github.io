@@ -109,7 +109,7 @@
 
 		}
 		.jobs{
-		    width: 90%;
+		    width: 100%;
     		margin: 0 auto;
     		margin-bottom: 20px;
     	}
@@ -118,6 +118,7 @@
 
 .first-services{
 	@extend %base-section-home;
+	text-align: center;
 	h2{
 		@extend %title-sections-pages;
 		@extend %title-h2-default;
@@ -125,6 +126,8 @@
 	
 	.type-jobs{
 		margin: 35px 0px;
+		width: 33%;
+		float: left;
 		.boxSVG{
 			width: 30%;
 			margin: 0 auto;
@@ -146,12 +149,18 @@
 	}
 	@include media-query($on-palm) {
 		text-align: center;
+		.type-jobs{
+			width: 100%;
+			float: left;
+		}
+
 	}
 }
 
 .first-habilit{
 	@extend %base-section-home;
 	background-color: #fbfbfb;
+	text-align: center;
 	h2{
 		@extend %title-sections-pages;
 		@extend %title-h2-default;
@@ -207,12 +216,15 @@
 }
 .first-contact{
 	@extend %base-section-home;
+	text-align: center;
 	h2{
 		@extend %title-sections-pages;
 		@extend %title-h2-default;
 	}
 	.email-home{
 		margin-bottom: 20px;
+		float: left;
+    	width: 33%;
 		img{
 			width: 8%;
 		}
@@ -223,5 +235,8 @@
 	}
 	@include media-query($on-palm) {
 		text-align: center;
+		.email-home{
+			width: 100%;
+		}
 	}
 }
