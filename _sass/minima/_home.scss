@@ -35,8 +35,8 @@
 		@extend %center-mobile;
 	}
 	h2{
-		
 		@extend %titulo-h2-tablet;
+		@extend %title-sections-pages;
 	}
 	p{
 		@extend %textos-desk;
@@ -47,16 +47,16 @@
 	}
 
     @extend %base-section-home;
-	h2{
-		@extend %title-sections-pages;
-		@extend %title-h2-default;
-	}
+	
 	p{
 		@extend %texto-home;
 	}
 
 	@include media-query($on-palm) {
 		text-align: center;
+		h2{
+			font-size: $font-size-title-h2;
+		}
 
 		img{
 			width: 50%;
@@ -107,7 +107,7 @@
 	@include media-query($on-palm) {
 		text-align: center;
 		h2{
-
+			font-size: $font-size-title-h2;
 		}
 		.jobs{
 		    width: 100%;
@@ -155,6 +155,9 @@
 			width: 100%;
 			float: left;
 		}
+		h2{
+			font-size: $font-size-title-h2;
+		}
 
 	}
 }
@@ -166,7 +169,6 @@
 	h2{
 		@extend %titulo-h2-tablet;
 		@extend %title-sections-pages;
-		@extend %title-h2-default;
 	}
 	.skillbar {
 		display:block;
@@ -194,7 +196,7 @@
 
 	.skillbar-title span {
 		font-weight: 200;
-		font-size: 1.6em;
+		font-size: 1.4em;
 	}
 
 	.skill-bar-title{
@@ -215,16 +217,19 @@
 	}
 	@include media-query($on-palm) {
 		text-align: center;
+		h2{
+			font-size: $font-size-title-h2;
+		}
 	}
 }
+
 .first-contact{
+
 	@extend %base-section-home;
 	text-align: center;
 	h2{
 		@extend %titulo-h2-tablet;
 		@extend %title-sections-pages;
-		@extend %title-h2-default;
-		
 	}
 	.email-home{
 		margin-bottom: 20px;
@@ -242,6 +247,9 @@
 		text-align: center;
 		.email-home{
 			width: 100%;
+		}
+		h2{
+			font-size: $font-size-title-h2;
 		}
 	}
 }

@@ -18,7 +18,13 @@
 		color: #ffffff;
 		font-size: 0.7em;
 	}
+	.footer-col {
+		margin:0 auto;
+	}
 	@include media-query($on-palm) {
 		text-align: center;
+		.footer-col {
+  			float: left;
+  		}
 	}
 }
