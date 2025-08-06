@@ -6,62 +6,16 @@
     <title>Seu Nome - Desenvolvedor Frontend</title>
     <!-- Carrega o Tailwind CSS via CDN para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Define a fonte 'Inter' para todo o corpo do documento */
-        body {
-            font-family: 'Inter', sans-serif;
-            @apply bg-[#F8F8F8] text-[#333333]; /* Cores de fundo e texto principais */
-        }
-        /* Estilos personalizados para o menu hamburguer */
-        .hamburger-menu {
-            display: none; /* Esconde por padrão no desktop */
-        }
-        @media (max-width: 767px) {
-            .hamburger-menu {
-                display: block; /* Mostra no mobile */
-            }
-            .nav-links {
-                display: none; /* Esconde os links de navegação no mobile por padrão */
-                flex-direction: column;
-                width: 100%;
-                background-color: #FFFFFF; /* Fundo branco para o menu expandido */
-                position: absolute;
-                top: 64px; /* Abaixo do header */
-                left: 0;
-                padding: 1rem 0;
-                border-bottom-left-radius: 12px;
-                border-bottom-right-radius: 12px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                z-index: 10;
-            }
-            .nav-links.active {
-                display: flex; /* Mostra quando ativo */
-            }
-            .nav-links a {
-                padding: 0.75rem 1.5rem;
-                text-align: center;
-                border-radius: 8px;
-            }
-        }
-        /* Estilo para ícones SVG */
-        .icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            stroke-width: 2;
-            stroke: currentColor;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-    </style>
+    
+     <!--==================== CSS ====================-->
+        <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Link para a fonte Inter do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="antialiased">
     <!-- Header -->
     <header class="bg-white shadow-sm py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-20 rounded-b-xl">
-        <div class="text-2xl font-bold text-[#6B4FBB]">Seu Nome</div>
+        <div class="text-2xl font-bold text-[#6B4FBB]">Vinicius Mazzeo</div>
         <!-- Menu Hamburguer para Mobile -->
         <button id="hamburger" class="hamburger-menu p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6B4FBB]">
             <svg class="icon w-6 h-6 text-[#6B4FBB]" viewBox="0 0 24 24">
@@ -83,7 +37,7 @@
         <section id="home" class="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-80px)] text-center md:text-left py-16">
             <div class="md:w-1/2">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-[#6B4FBB] leading-tight mb-4">
-                    Olá, eu sou <br class="hidden md:block"> [Seu Nome],
+                    Olá, eu sou <br class="hidden md:block"> Vinicius,
                 </h1>
                 <p class="text-2xl md:text-3xl font-semibold text-[#333333] mb-6">
                     Desenvolvedor Frontend.

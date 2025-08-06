@@ -1,0 +1,47 @@
+/* Define a fonte 'Inter' para todo o corpo do documento */
+body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-[#F8F8F8] text-[#333333]; /* Cores de fundo e texto principais */
+}
+/* Estilos personalizados para o menu hamburguer */
+.hamburger-menu {
+    display: none; /* Esconde por padrão no desktop */
+}
+@media (max-width: 767px) {
+    .hamburger-menu {
+        display: block; /* Mostra no mobile */
+    }
+    .nav-links {
+        display: none; /* Esconde os links de navegação no mobile por padrão */
+        flex-direction: column;
+        width: 100%;
+        background-color: #FFFFFF; /* Fundo branco para o menu expandido */
+        position: absolute;
+        top: 64px; /* Abaixo do header */
+        left: 0;
+        padding: 1rem 0;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+    .nav-links.active {
+        display: flex; /* Mostra quando ativo */
+    }
+    .nav-links a {
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+        border-radius: 8px;
+    }
+}
+/* Estilo para ícones SVG */
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    stroke-width: 2;
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
