@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seu Restaurante — Delivery Rápido</title>
+  <meta name="description" content="Delivery de qualidade: hambúrgueres artesanais, pizzas e sobremesas. Peça pelo WhatsApp e receba rapidinho!" />
+  <meta property="og:title" content="Seu Restaurante — Delivery Rápido" />
+  <meta property="og:description" content="Cardápio digital, avaliações reais e pedido via WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Seu+Restaurante" />
+  <meta name="theme-color" content="#8E236A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#8E236A;           /* primária */
+      --brand-2:#AA398C;         /* primária 2 */
+      --accent:#FF00BB;          /* destaque */
+      --bg:#0f0f12;              /* fundo escuro elegante */
+      --card:#17171c;            /* cards */
+      --text:#f2f2f2;            /* texto principal */
+      --muted:#bdbdc7;           /* texto secundário */
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --shadow-soft:0 6px 18px rgba(0,0,0,.25);
+      --container:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(180deg,#101016 0%, #0c0c10 100%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.15rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;border:0;font-weight:700;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s ease,opacity .15s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn--ghost{background:transparent;border:1px solid #ffffff22;color:#fff}
+    .pill{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .8rem;border:1px solid #ffffff22;border-radius:999px;color:var(--muted);font-size:.85rem}
+    header.site{position:sticky;top:0;background:rgba(15,15,18,.75);backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid #ffffff10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand__logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:900}
+    .brand__name{font-weight:900;letter-spacing:.3px}
+    .nav__cta{display:flex;align-items:center;gap:.6rem}
+    .hero{position:relative;overflow:hidden}
+    .hero__wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:3.5rem 0}
+    .hero__title{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:0 0 .6rem}
+    .hero__subtitle{color:var(--muted);font-size:1.05rem;margin:0 0 1.4rem}
+    .badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 1.6rem}
+    .hero__media{position:relative;isolation:isolate}
+    .hero__card{background:linear-gradient(180deg,#1a1a21 0%,#131319 100%);border:1px solid #ffffff10;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .hero__img{aspect-ratio:4/3;object-fit:cover}
+    .hero__row{display:flex;gap:.6rem;flex-wrap:wrap}
+    section{padding:60px 0}
+    .section__title{font-size:1.8rem;margin:0 0 .6rem}
+    .section__desc{color:var(--muted);margin:0 0 1.2rem}
+    .card{background:var(--card);border:1px solid #ffffff12;border-radius:var(--radius);box-shadow:var(--shadow-soft)}
+    /* filtros */
+    .filters{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 1.4rem}
+    .filters button{padding:.6rem .9rem;border-radius:999px;border:1px solid #ffffff20;background:#15151b;color:#fff;cursor:pointer}
+    .filters button.active{background:linear-gradient(135deg,var(--brand),var(--accent));border-color:transparent}
+    /* grid de produtos */
+    .grid{display:grid;gap:1.2rem}
+    @media (min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:980px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .item{overflow:hidden;display:flex;flex-direction:column}
+    .item__img{aspect-ratio:4/3;object-fit:cover}
+    .item__body{padding:16px}
+    .item__title{margin:0 0 .25rem;font-size:1.05rem}
+    .item__desc{color:var(--muted);font-size:.95rem;margin:0 0 .8rem}
+    .item__row{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+    .price{font-weight:800}
+    .qty{display:flex;align-items:center;border:1px solid #ffffff20;border-radius:999px}
+    .qty button{background:transparent;border:0;color:#fff;padding:.4rem .6rem;cursor:pointer;font-size:1rem}
+    .qty input{width:36px;text-align:center;background:transparent;border:0;color:#fff;font-weight:700}
+    .reviews{display:grid;gap:1rem}
+    @media (min-width:900px){.reviews{grid-template-columns:repeat(3,1fr)}}
+    .rev{padding:18px}
+    .rev__head{display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem}
+    .avatar{width:40px;height:40px;border-radius:50%;background:#222}
+    .stars{color:#ffd166}
+    /* mapa + info */
+    .map-wrap{display:grid;gap:1rem}
+    @media (min-width:980px){.map-wrap{grid-template-columns:1.2fr .8fr}}
+    .info{padding:18px}
+    .info__row{display:grid;gap:.6rem;margin-top:.6rem}
+    .info__row div{display:flex;gap:.6rem;align-items:flex-start}
+    /* footer */
+    footer{border-top:1px solid #ffffff10;color:#a8a8b3}
+    .foot{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;padding:24px 0}
+    /* Carrinho flutuante / CTA WhatsApp */
+    .cartbar{position:sticky;bottom:16px;margin-top:20px;z-index:60}
+    .cart{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem 1rem;border-radius:999px;background:linear-gradient(90deg,#1a1a21,#14141a);border:1px solid #ffffff18;box-shadow:var(--shadow)}
+    .cart__left{display:flex;align-items:center;gap:.8rem}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--ok)}
+    .cart__sum{font-weight:800}
+    .cart__btn{white-space:nowrap}
+    /* busca e tabs */
+    .toolbar{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between}
+    .search{flex:1;min-width:240px;display:flex;align-items:center;gap:.5rem;background:#14141a;border:1px solid #ffffff1a;border-radius:999px;padding:.55rem .9rem}
+    .search input{flex:1;background:transparent;border:0;color:#fff;outline:none}
+    /* acessibilidade foco */
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site" aria-label="Topo do site">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">🍔</div>
+        <div>
+          <div class="brand__name">Seu Restaurante</div>
+          <div class="pill" aria-label="Tempo de entrega">⏱️ 30–45 min • 🚚 Delivery</div>
+        </div>
+      </div>
+      <div class="nav__cta">
+        <a href="#cardapio" class="btn--ghost">Ver Cardápio</a>
+        <a id="whatsappTop" class="btn" href="#" aria-label="Pedir pelo WhatsApp">Pedir no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__wrap">
+      <div>
+        <h1 class="hero__title">Sabor que converte: peça <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">sem complicação</span>.</h1>
+        <p class="hero__subtitle">Hambúrgueres artesanais, pizzas de longa fermentação e sobremesas irresistíveis. Clique, escolha e finalize no WhatsApp.</p>
+        <div class="badges">
+          <span class="pill">⭐ 4.8/5 (1.2k avaliações)</span>
+          <span class="pill">🗺️ Entrega em até 6km</span>
+          <span class="pill">🔒 Pagamento seguro</span>
+        </div>
+        <div class="hero__row">
+          <a href="#cardapio" class="btn" aria-label="Explorar cardápio">Ver Cardápio</a>
+          <a href="#avaliacoes" class="btn btn--ghost">Avaliações</a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <div class="hero__card card">
+          <img class="hero__img" src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop" alt="Hambúrguer artesanal com queijo derretido e batatas" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cardápio -->
+  <section id="cardapio" aria-label="Cardápio digital">
+    <div class="container">
+      <div class="toolbar">
+        <h2 class="section__title" style="margin:0">Cardápio</h2>
+        <label class="search" aria-label="Buscar no cardápio">
+          🔎 <input id="searchInput" type="search" placeholder="Busque por sabor, ingrediente..." />
+        </label>
+      </div>
+      <p class="section__desc">Escolha seus favoritos e envie o pedido via WhatsApp. Sem cadastro, sem fricção.</p>
+
+      <div class="filters" role="tablist" aria-label="Categorias">
+        <button class="active" data-filter="tudo" role="tab" aria-selected="true">Tudo</button>
+        <button data-filter="hamburgueres" role="tab">Hambúrgueres</button>
+        <button data-filter="pizzas" role="tab">Pizzas</button>
+        <button data-filter="bebidas" role="tab">Bebidas</button>
+        <button data-filter="sobremesas" role="tab">Sobremesas</button>
+      </div>
+
+      <div id="grid" class="grid" role="list"></div>
+
+      <!-- Cart bar -->
+      <div class="cartbar">
+        <div class="container">
+          <div class="cart" aria-live="polite">
+            <div class="cart__left">
+              <span class="dot" aria-hidden="true"></span>
+              <div><strong id="cartCount">0</strong> item(s) • <span class="cart__sum" id="cartTotal">R$ 0,00</span></div>
+            </div>
+            <div style="display:flex;gap:.6rem;align-items:center">
+              <button id="viewCartBtn" class="btn btn--ghost" type="button" aria-label="Ver itens selecionados">Ver itens</button>
+              <a id="whatsappBtn" class="btn cart__btn" href="#">Finalizar no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Avaliações -->
+  <section id="avaliacoes" aria-label="Avaliações de clientes">
+    <div class="container">
+      <h2 class="section__title">O que a galera diz</h2>
+      <p class="section__desc">Avaliações reais de clientes satisfeitos.</p>
+      <div class="reviews">
+        <article class="rev card">
+          <div class="rev__head">
+            <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="Foto de perfil da cliente Marina" />
+            <div>
+              <strong>Marina</strong><div class="stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+          <p>Entrega rápida e hambúrguer suculento! O pão selado é surreal. Recomendo o <em>Brasa Smash</em>.</p>
+        </article>
+        <article class="rev card">
+          <div class="rev__head">
+            <img class="avatar" src="https://i.pravatar.cc/80?img=22" alt="Foto de perfil do cliente Paulo" />
+            <div>
+              <strong>Paulo</strong><div class="stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+          <p>Pizza de pepperoni com borda recheada é a melhor da cidade. Chegou quentinha!</p>
+        </article>
+        <article class="rev card">
+          <div class="rev__head">
+            <img class="avatar" src="https://i.pravatar.cc/80?img=32" alt="Foto de perfil da cliente Aline" />
+            <div>
+              <strong>Aline</strong><div class="stars" aria-label="4 estrelas">★★★★☆</div>
+            </div>
+          </div>
+          <p>Sobremesa de brownie com sorvete virou tradição aqui em casa. Perfeito.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa + informações -->
+  <section aria-label="Localização e informações">
+    <div class="container map-wrap">
+      <div class="card">
+        <!-- Google Maps (trocar endereço no src) -->
+        <iframe title="Mapa de localização" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.940370902384!2d-46.65657172373415!3d-23.57117336174637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8c7b2f573%3A0x6e1b7c8b2d6421c!2sAv.%20Paulista%2C%20São%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000" width="100%" height="380" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="card info">
+        <h3 style="margin:0 0 .4rem">Informações</h3>
+        <p class="section__desc" style="margin:0">Av. Paulista, 1000 — São Paulo • Aberto hoje: 11h–23h</p>
+        <div class="info__row">
+          <div>📞 <span>(11) 99999-9999</span></div>
+          <div>📍 <span>Retirada no balcão e delivery</span></div>
+          <div>💳 <span>Pix • Cartão • Dinheiro</span></div>
+          <div>🛵 <span>Entrega em até 6km</span></div>
+        </div>
+        <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
+          <a class="btn" id="whatsappInfo" href="#">Pedir no WhatsApp</a>
+          <a class="btn btn--ghost" href="#cardapio">Ver Cardápio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> Seu Restaurante. Todos os direitos reservados.</div>
+      <div style="display:flex;gap:.6rem">
+        <a class="pill" href="#cardapio">Cardápio</a>
+        <a class="pill" href="#avaliacoes">Avaliações</a>
+        <a class="pill" href="#">Termos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal simples do carrinho -->
+  <dialog id="cartModal" style="border:0;border-radius:16px;max-width:700px;width:96%;padding:0;background:#121217;color:#fff">
+    <div style="padding:18px 18px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff14">
+      <h3 style="margin:0">Seu pedido</h3>
+      <button id="closeCart" class="btn btn--ghost" style="border-radius:12px">Fechar</button>
+    </div>
+    <div id="cartList" style="padding:18px;display:grid;gap:.8rem;max-height:50vh;overflow:auto"></div>
+    <div style="padding:18px;border-top:1px solid #ffffff14;display:flex;justify-content:space-between;align-items:center">
+      <strong>Total: <span id="cartTotalModal">R$ 0,00</span></strong>
+      <a id="whatsappModal" class="btn" href="#">Finalizar no WhatsApp</a>
+    </div>
+  </dialog>
+
+  <!-- Estrutura de dados LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Restaurant",
+    "name":"Seu Restaurante",
+    "image":"https://via.placeholder.com/800x600.png?text=Seu+Restaurante",
+    "address":{"@type":"PostalAddress","streetAddress":"Av. Paulista, 1000","addressLocality":"São Paulo","addressRegion":"SP","postalCode":"01310-000","addressCountry":"BR"},
+    "telephone":"+55-11-99999-9999",
+    "servesCuisine":["Hambúrguer","Pizza","Sobremesa"],
+    "priceRange":"R$",
+    "url":"https://seurestaurante.com.br"
+  }
+  </script>
+
+  <script>
+  // ==================== CONFIGURAÇÕES ====================
+  const WHATSAPP_NUMBER = "5511999999999"; // <-- troque aqui (DDI + DDD + número, sem sinais)
+  const DELIVERY_FEE = 0; // taxa opcional
+
+  // ==================== DADOS DO CARDÁPIO ====================
+  const MENU = [
+    // Hambúrgueres
+    { id:"h1", cat:"hamburgueres", title:"Brasa Smash", desc:"Dois smash 100g, cheddar duplo, picles da casa, molho brasa, pão brioche.", price: 34.90, img:"https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop" },
+    { id:"h2", cat:"hamburgueres", title:"Clássico Bacon", desc:"160g de carne, bacon crocante, queijo prato, maionese da casa.", price: 36.90, img:"https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=1600&auto=format&fit=crop" },
+    { id:"h3", cat:"hamburgueres", title:"Cheddar Melt", desc:"160g de carne, cheddar inglês e cebola caramelizada.", price: 35.90, img:"https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop" },
+    // Pizzas
+    { id:"p1", cat:"pizzas", title:"Pepperoni", desc:"Molho da casa, muçarela e pepperoni. Borda recheada opcional.", price: 54.90, img:"https://images.unsplash.com/photo-1548365328-8b849c1e0b4b?q=80&w=1600&auto=format&fit=crop" },
+    { id:"p2", cat:"pizzas", title:"Margherita", desc:"Muçarela, tomate, manjericão e azeite extra virgem.", price: 49.90, img:"https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2c?q=80&w=1600&auto=format&fit=crop" },
+    { id:"p3", cat:"pizzas", title:"Frango com Catupiry", desc:"Frango desfiado, catupiry original, muçarela e milho.", price: 56.90, img:"https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?q=80&w=1600&auto=format&fit=crop" },
+    // Bebidas
+    { id:"b1", cat:"bebidas", title:"Refrigerante Lata", desc:"350ml — sabores variados.", price: 7.00, img:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=1600&auto=format&fit=crop" },
+    { id:"b2", cat:"bebidas", title:"Água com gás", desc:"310ml — geladinha.", price: 5.00, img:"https://images.unsplash.com/photo-1566417713940-fe7c737a9df1?q=80&w=1600&auto=format&fit=crop" },
+    { id:"b3", cat:"bebidas", title:"Suco natural", desc:"Laranja, limão ou maracujá.", price: 10.00, img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1600&auto=format&fit=crop" },
+    // Sobremesas
+    { id:"s1", cat:"sobremesas", title:"Brownie com Sorvete", desc:"Brownie quente + bola de creme.", price: 19.90, img:"https://images.unsplash.com/photo-1541782814452-d6b4b0bc07a6?q=80&w=1600&auto=format&fit=crop" },
+    { id:"s2", cat:"sobremesas", title:"Pudim da Casa", desc:"Clássico, cremoso, calda generosa.", price: 14.90, img:"https://images.unsplash.com/photo-1589985270826-4b61d3c41742?q=80&w=1600&auto=format&fit=crop" }
+  ];
+
+  // ==================== ESTADO ====================
+  const state = {
+    filter: 'tudo',
+    search: '',
+    cart: {} // {id: qty}
+  };
+
+  // ==================== HELPERS ====================
+  const money = (n)=> n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+  const byFilter = item => state.filter==='tudo' ? true : item.cat===state.filter;
+  const bySearch = item => state.search.trim()==='' ? true : (item.title + ' ' + item.desc).toLowerCase().includes(state.search.toLowerCase());
+
+  // ==================== RENDER CARDÁPIO ====================
+  const grid = document.getElementById('grid');
+
+  function renderMenu(){
+    grid.innerHTML = '';
+    const items = MENU.filter(byFilter).filter(bySearch);
+    if(!items.length){
+      grid.innerHTML = `<div class="card" style="padding:18px">🙁 Nada encontrado. Tente outro termo.</div>`;
+      return;
+    }
+    for(const it of items){
+      const wrap = document.createElement('article');
+      wrap.className = 'item card';
+      wrap.setAttribute('role','listitem');
+      wrap.innerHTML = `
+        <img class="item__img" src="${it.img}" alt="${it.title}" loading="lazy" />
+        <div class="item__body">
+          <h3 class="item__title">${it.title}</h3>
+          <p class="item__desc">${it.desc}</p>
+          <div class="item__row">
+            <div class="price">${money(it.price)}</div>
+            <div class="qty" aria-label="Quantidade para ${it.title}">
+              <button aria-label="Diminuir" data-action="dec" data-id="${it.id}">−</button>
+              <input value="${state.cart[it.id]||0}" aria-label="Quantidade selecionada" readonly />
+              <button aria-label="Aumentar" data-action="inc" data-id="${it.id}">+</button>
+            </div>
+          </div>
+        </div>`;
+      grid.appendChild(wrap);
+    }
+  }
+
+  // ==================== FILTROS & BUSCA ====================
+  document.querySelectorAll('.filters button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      state.filter = btn.dataset.filter;
+      renderMenu();
+    });
+  });
+
+  document.getElementById('searchInput').addEventListener('input', (e)=>{
+    state.search = e.target.value;
+    renderMenu();
+  });
+
+  // Delegação para +/-
+  grid.addEventListener('click', (e)=>{
+    const btn = e.target.closest('button[data-action]');
+    if(!btn) return;
+    const id = btn.dataset.id;
+    const action = btn.dataset.action;
+    const current = state.cart[id] || 0;
+    const next = action === 'inc' ? current + 1 : Math.max(0, current - 1);
+    if(next === 0) delete state.cart[id]; else state.cart[id] = next;
+    syncQtyInputs();
+    updateCartUI();
+  });
+
+  function syncQtyInputs(){
+    document.querySelectorAll('button[data-id]').forEach(b=>{
+      const id = b.dataset.id;
+      const input = b.parentElement.querySelector('input');
+      input.value = state.cart[id] || 0;
+    });
+  }
+
+  // ==================== CARRINHO ====================
+  function cartItems(){
+    return Object.entries(state.cart).map(([id,qty])=>{
+      const item = MENU.find(i=>i.id===id);
+      return {...item, qty, subtotal: item.price * qty};
+    });
+  }
+
+  function cartTotals(){
+    const items = cartItems();
+    const sum = items.reduce((acc,i)=> acc + i.subtotal, 0);
+    return { count: items.reduce((acc,i)=> acc + i.qty, 0), sum, total: sum + DELIVERY_FEE };
+  }
+
+  const cartCountEl = document.getElementById('cartCount');
+  const cartTotalEl = document.getElementById('cartTotal');
+  const cartTotalModalEl = document.getElementById('cartTotalModal');
+
+  function updateCartUI(){
+    const {count, total} = cartTotals();
+    cartCountEl.textContent = count;
+    cartTotalEl.textContent = money(total);
+    cartTotalModalEl.textContent = money(total);
+  }
+
+  // ==================== WHATSAPP ====================
+  function buildWhatsAppMessage(){
+    const items = cartItems();
+    if(items.length===0) return "Olá! Quero fazer um pedido. Pode me ajudar?";
+    const header = `*Novo pedido*%0A`;
+    const lines = items.map(i=>`• ${i.title} x${i.qty} — ${money(i.subtotal)}`).join('%0A');
+    const fee = DELIVERY_FEE>0 ? `%0ATaxa de entrega: ${money(DELIVERY_FEE)}` : '';
+    const total = `%0A*Total:* ${money(items.reduce((a,i)=>a+i.subtotal,0)+DELIVERY_FEE)}`;
+    const ask = `%0A%0AEndereço para entrega:%0ABairro:%0AForma de pagamento: Pix/Cartão/Dinheiro`;
+    return header + lines + fee + total + ask;
+  }
+
+  function waLink(){
+    const msg = buildWhatsAppMessage();
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+  }
+
+  function bindWhatsAppLinks(){
+    const links = [document.getElementById('whatsappBtn'), document.getElementById('whatsappModal'), document.getElementById('whatsappTop'), document.getElementById('whatsappInfo')].filter(Boolean);
+    links.forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        a.setAttribute('href', waLink());
+      });
+    });
+  }
+
+  // ==================== MODAL ====================
+  const modal = document.getElementById('cartModal');
+  const cartList = document.getElementById('cartList');
+  document.getElementById('viewCartBtn').addEventListener('click', ()=>{
+    renderCartModal();
+    modal.showModal();
+  });
+  document.getElementById('closeCart').addEventListener('click', ()=> modal.close());
+
+  function renderCartModal(){
+    const items = cartItems();
+    if(items.length===0){
+      cartList.innerHTML = `<div class="card" style="padding:14px">Seu carrinho está vazio.</div>`;
+      return;
+    }
+    cartList.innerHTML = items.map(i=>`
+      <div class="card" style="padding:12px;display:grid;grid-template-columns:.8fr 1.2fr auto;gap:.8rem;align-items:center">
+        <img src="${i.img}" alt="${i.title}" style="border-radius:12px;aspect-ratio:4/3;object-fit:cover" />
+        <div>
+          <div style="font-weight:700">${i.title}</div>
+          <div style="color:var(--muted);font-size:.95rem">${money(i.price)} • Subtotal: ${money(i.subtotal)}</div>
+        </div>
+        <div class="qty" aria-label="Quantidade">
+          <button data-action="dec-modal" data-id="${i.id}">−</button>
+          <input value="${i.qty}" readonly />
+          <button data-action="inc-modal" data-id="${i.id}">+</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  cartList.addEventListener('click',(e)=>{
+    const btn = e.target.closest('button[data-action]');
+    if(!btn) return;
+    const id = btn.dataset.id;
+    const action = btn.dataset.action;
+    const current = state.cart[id] || 0;
+    const next = action === 'inc-modal' ? current + 1 : Math.max(0, current - 1);
+    if(next === 0) delete state.cart[id]; else state.cart[id] = next;
+    renderCartModal();
+    updateCartUI();
+    syncQtyInputs();
+  });
+
+  // ==================== INIT ====================
+  window.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderMenu();
+    updateCartUI();
+    bindWhatsAppLinks();
+  });
+  </script>
+</body>
+</html>
