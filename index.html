@@ -67,11 +67,11 @@
       </nav>
     </header>
 
-    <main class="container mx-auto px-6 md:px-12 py-12">
+    <main class="w-full">
       <!-- Hero Section -->
       <section
         id="home"
-        class="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-80px)] text-center md:text-left pt-0 py-16"
+        class="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-80px)] text-center md:text-left pt-0 container mx-auto px-6 md:px-12 py-12"
       >
         <div
           class="md:w-1/2 md:mt-0 grid gap-6 grid-cols-[0.5fr_3fr] items-center"
@@ -164,14 +164,16 @@
       <!-- Sobre Mim Section -->
       <section
         id="sobre"
-        class="py-20 rounded-xl px-8 md:px-16 mb-16"
+        class="py-20 rounded-xl px-8 mb-16 container mx-auto px-6 md:px-12 py-12"
       >
         <h2
           class="text-3xl md:text-4xl font-bold text-[#6B4FBB] text-center mb-12"
         >
           Sobre Mim
         </h2>
-        <div class="flex flex-col md:flex-row items-center md:space-x-12">
+        <div
+          class="flex flex-col md:flex-row-reverse items-center md:space-x-12"
+        >
           <div class="md:w-1/3 mb-8 md:mb-0">
             <!-- Imagem de perfil para a seção Sobre Mim -->
             <img
@@ -182,24 +184,36 @@
           </div>
           <div class="md:w-2/3 text-lg text-[#666666]">
             <p class="mb-6">
-              Com uma década de experiência no desenvolvimento frontend, sou
-              apaixonado por transformar ideias complexas em interfaces de
-              usuário intuitivas e de alto desempenho. Minha jornada me permitiu
-              trabalhar com uma vasta gama de tecnologias e metodologias, sempre
-              buscando a excelência e a inovação.
+              Com mais de uma década de experiência em desenvolvimento frontend,
+              sou apaixonado por transformar ideias complexas em interfaces
+              intuitivas, modernas e de alto desempenho. Ao longo da minha
+              trajetória, trabalhei com uma ampla variedade de tecnologias e
+              metodologias, sempre com foco em excelência, inovação e resultados
+              que agreguem valor real.
             </p>
             <p class="mb-6">
-              Sou especialista em construir aplicações robustas e escaláveis
-              usando **React** e **Angular**, e tenho um forte entendimento de
-              princípios de **UI/UX** para garantir que cada pixel sirva a um
-              propósito. Minha experiência com **PHP** no backend também me dá
-              uma visão holística do ciclo de desenvolvimento.
+              Tenho sólida experiência na construção de aplicações robustas e
+              escaláveis com React, Angular, Next.js e TypeScript, aliada a um
+              forte entendimento de princípios de UI/UX para garantir que cada
+              detalhe da interface seja funcional e estratégico. Minha vivência
+              com Node.js no backend, assim como com PHP e bancos de dados como
+              MySQL, me proporciona uma visão completa do ciclo de
+              desenvolvimento e integração entre front e back.
             </p>
             <p class="mb-6">
-              Estou sempre em busca de novos desafios e oportunidades para
-              aplicar minhas habilidades e continuar crescendo
-              profissionalmente.
+              Estou constantemente em busca de novos desafios que me permitam
+              aplicar minhas habilidades, colaborar em projetos impactantes e
+              continuar evoluindo profissionalmente.
             </p>
+            <div class="about__buttons">
+              <a
+                download=""
+                href="assets/pdf/Alexa-Cv.pdf"
+                class="button button--flez"
+              >
+                Download CV <i class="uil uil-download-alt button__icon"></i>
+              </a>
+            </div>
             <h3 class="text-xl font-semibold text-[#6B4FBB] mb-4">
               Minhas Habilidades:
             </h3>
@@ -236,6 +250,22 @@
                 class="bg-[#9C8BBF] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm"
                 >Git</span
               >
+              <span
+                class="bg-[#9C8BBF] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm"
+                >NodeJS</span
+              >
+              <span
+                class="bg-[#9C8BBF] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm"
+                >TypeScript</span
+              >
+              <span
+                class="bg-[#9C8BBF] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm"
+                >Next.JS</span
+              >
+              <span
+                class="bg-[#9C8BBF] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm"
+                >MongoDB</span
+              >
             </div>
           </div>
         </div>
@@ -244,7 +274,7 @@
       <!-- Portfólio Section -->
       <section id="portfolio" class="py-20">
         <h2
-          class="text-3xl md:text-4xl font-bold text-[#6B4FBB] text-center mb-12"
+          class="text-3xl md:text-4xl font-bold text-[#6B4FBB] text-center mb-12 container mx-auto px-6 md:px-12 py-12"
         >
           Meus Projetos
         </h2>
@@ -263,10 +293,11 @@
                 LP Delivery
               </h3>
               <p class="text-[#666666] text-sm mb-4">
-                Landing Page responsiva para restaurantes e serviços de delivery, com foco
-                em conversão e experiência do usuário. Possui cardápio digital filtrável,
-                pedido direto via WhatsApp, integração com Google Maps e seção de
-                avaliações, oferecendo uma solução completa para aumentar as vendas online.
+                Landing Page responsiva para restaurantes e serviços de
+                delivery, com foco em conversão e experiência do usuário. Possui
+                cardápio digital filtrável, pedido direto via WhatsApp,
+                integração com Google Maps e seção de avaliações, oferecendo uma
+                solução completa para aumentar as vendas online.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span
@@ -285,6 +316,7 @@
               <a
                 href="projetos/lp-delivery/index.html"
                 class="text-[#6B4FBB] hover:underline font-medium text-sm"
+                target="_blank"
                 >Ver Projeto &rarr;</a
               >
             </div>
@@ -373,73 +405,113 @@
       <!-- Serviços Section -->
       <section
         id="servicos"
-        class="py-20 bg-white rounded-xl shadow-md px-8 md:px-16 mb-16"
+        class="py-20 bg-[#6B4FBB] px-8 md:px-16 mb-16 w-full mx-auto px-6 md:px-12 py-12"
       >
-        <h2
-          class="text-3xl md:text-4xl font-bold text-[#6B4FBB] text-center mb-12"
-        >
-          Meus Serviços
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Serviço 1 -->
-          <div
-            class="flex flex-col items-center text-center p-6 bg-[#F8F8F8] rounded-xl shadow-sm hover:shadow-md transition duration-300"
+        <div class="container">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-white text-center mb-12"
           >
-            <!-- Ícone SVG para Landing Pages -->
-            <svg class="icon w-12 h-12 text-[#6B4FBB] mb-4" viewBox="0 0 24 24">
-              <path
-                d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-              ></path>
-              <path
-                d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-              ></path>
-            </svg>
-            <h3 class="text-xl font-semibold text-[#333333] mb-2">
-              Desenvolvimento de Landing Pages
-            </h3>
-            <p class="text-[#666666]">
-              Crio landing pages responsivas e otimizadas para alta conversão,
-              com foco em design e performance.
-            </p>
-          </div>
+            Meus Serviços
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Serviço 1 -->
+            <div
+              class="flex flex-col items-center text-center p-6 bg-[#F8F8F8] rounded-xl shadow-sm hover:shadow-md transition duration-300"
+            >
+              <i class="uil uil-arrow services__icon text-[#6B4FBB] text-6xl"></i>
+              <h3 class="text-xl font-semibold text-[#333333] mb-2">
+                Frontend <br />
+                Developer
+              </h3>
+              <p class="text-[#666666]">
+                Desenvolvimento de interfaces modernas e responsivas com foco em
+                usabilidade, performance e experiência do usuário.
+              </p>
+              <span
+                class="button button--flex button--small button--link services__button"
+              >
+                View More
+                <i class="uil uil-arrow-right button__icon"></i>
+              </span>
 
-          <!-- Serviço 2 -->
-          <div
-            class="flex flex-col items-center text-center p-6 bg-[#F8F8F8] rounded-xl shadow-sm hover:shadow-md transition duration-300"
-          >
-            <!-- Ícone SVG para Transformação de Design -->
-            <svg class="icon w-12 h-12 text-[#6B4FBB] mb-4" viewBox="0 0 24 24">
-              <path d="M12 20h9"></path>
-              <path
-                d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
-              ></path>
-            </svg>
-            <h3 class="text-xl font-semibold text-[#333333] mb-2">
-              Transformação de Design em Código
-            </h3>
-            <p class="text-[#666666]">
-              Converto seus designs do Figma, Adobe XD ou Sketch em código React
-              ou Angular pixel-perfect.
-            </p>
-          </div>
+              <div class="services__modal">
+                <div class="services__modal-content">
+                  <h4 class="services__modal-title">
+                    Frontend <br />
+                    Developer
+                  </h4>
+                  <i class="uil uil-times services__modal-close"></i>
 
-          <!-- Serviço 3 -->
-          <div
-            class="flex flex-col items-center text-center p-6 bg-[#F8F8F8] rounded-xl shadow-sm hover:shadow-md transition duration-300"
-          >
-            <!-- Ícone SVG para Otimização de Performance -->
-            <svg class="icon w-12 h-12 text-[#6B4FBB] mb-4" viewBox="0 0 24 24">
-              <path d="M12 2v20"></path>
-              <path d="m19 17-7 5-7-5"></path>
-              <path d="m19 7-7-5-7 5"></path>
-            </svg>
-            <h3 class="text-xl font-semibold text-[#333333] mb-2">
-              Otimização de Performance Web
-            </h3>
-            <p class="text-[#666666]">
-              Melhoro a velocidade de carregamento e o desempenho geral do seu
-              site para uma melhor experiência do usuário.
-            </p>
+                  <ul class="services__modal-services grid">
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Desenvolvimento de interfaces modernas e responsivas</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Criação de páginas e aplicações em React, Angular e Next.js</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Integração de UI/UX com foco em usabilidade e performance</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Implementação de animações, microinterações e design system</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Otimização de performance e SEO técnico no front</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Serviço 2 -->
+            <div
+              class="flex flex-col items-center text-center p-6 bg-[#F8F8F8] rounded-xl shadow-sm hover:shadow-md transition duration-300"
+            >
+              <!-- Ícone SVG para Transformação de Design -->
+              <svg
+                class="icon w-12 h-12 text-[#6B4FBB] mb-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 20h9"></path>
+                <path
+                  d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                ></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[#333333] mb-2">
+                Transformação de Design em Código
+              </h3>
+              <p class="text-[#666666]">
+                Converto seus designs do Figma, Adobe XD ou Sketch em código
+                React ou Angular pixel-perfect.
+              </p>
+            </div>
+
+            <!-- Serviço 3 -->
+            <div
+              class="flex flex-col items-center text-center p-6 bg-[#F8F8F8] rounded-xl shadow-sm hover:shadow-md transition duration-300"
+            >
+              <!-- Ícone SVG para Otimização de Performance -->
+              <svg
+                class="icon w-12 h-12 text-[#6B4FBB] mb-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2v20"></path>
+                <path d="m19 17-7 5-7-5"></path>
+                <path d="m19 7-7-5-7 5"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[#333333] mb-2">
+                Otimização de Performance Web
+              </h3>
+              <p class="text-[#666666]">
+                Melhoro a velocidade de carregamento e o desempenho geral do seu
+                site para uma melhor experiência do usuário.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -569,7 +641,16 @@
         </a>
       </div>
     </footer>
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" class="scrollup" id="scroll-up"
+      ><i class="uil uil-arrow-up scrollup__icon"></i
+    ></a>
 
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
     <script>
       // JavaScript para o menu hamburguer (mobile)
       document.addEventListener("DOMContentLoaded", function () {
