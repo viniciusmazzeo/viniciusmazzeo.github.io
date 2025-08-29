@@ -172,49 +172,17 @@
           Sobre Mim
         </h2>
         <div
-          class="flex flex-col md:flex-row-reverse items-center md:space-x-12"
+          class="flex flex-col md:flex-row-reverse items-center"
         >
-          <div class="md:w-1/3 mb-8 md:mb-0">
+          <div class="md:w-1/3 mb-8 md:mb-0 md:ml-12">
             <!-- Imagem de perfil para a seção Sobre Mim -->
             <img
-              src="https://placehold.co/300x300/6B4FBB/FFFFFF?text=Perfil"
+              src="assets/img/abaout.png"
               alt="Sua Foto de Perfil"
               class="rounded-xl w-full h-auto object-cover shadow-lg"
             />
-          </div>
-          <div class="md:w-2/3 text-lg text-[#666666]">
-            <p class="mb-6">
-              Com mais de uma década de experiência em desenvolvimento frontend,
-              sou apaixonado por transformar ideias complexas em interfaces
-              intuitivas, modernas e de alto desempenho. Ao longo da minha
-              trajetória, trabalhei com uma ampla variedade de tecnologias e
-              metodologias, sempre com foco em excelência, inovação e resultados
-              que agreguem valor real.
-            </p>
-            <p class="mb-6">
-              Tenho sólida experiência na construção de aplicações robustas e
-              escaláveis com React, Angular, Next.js e TypeScript, aliada a um
-              forte entendimento de princípios de UI/UX para garantir que cada
-              detalhe da interface seja funcional e estratégico. Minha vivência
-              com Node.js no backend, assim como com PHP e bancos de dados como
-              MySQL, me proporciona uma visão completa do ciclo de
-              desenvolvimento e integração entre front e back.
-            </p>
-            <p class="mb-6">
-              Estou constantemente em busca de novos desafios que me permitam
-              aplicar minhas habilidades, colaborar em projetos impactantes e
-              continuar evoluindo profissionalmente.
-            </p>
-            <div class="about__buttons">
-              <a
-                download=""
-                href="assets/pdf/Alexa-Cv.pdf"
-                class="button button--flez"
-              >
-                Download CV <i class="uil uil-download-alt button__icon"></i>
-              </a>
-            </div>
-            <h3 class="text-xl font-semibold text-[#6B4FBB] mb-4">
+            
+             <h3 class="text-xl font-semibold text-[#6B4FBB] mb-4 mt-4">
               Minhas Habilidades:
             </h3>
             <div class="flex flex-wrap gap-4">
@@ -268,11 +236,44 @@
               >
             </div>
           </div>
+          <div class="md:w-2/3 text-lg text-[#666666]">
+            <p class="mb-6">
+              Com mais de uma década de experiência em desenvolvimento frontend,
+              sou apaixonado por transformar ideias complexas em interfaces
+              intuitivas, modernas e de alto desempenho. Ao longo da minha
+              trajetória, trabalhei com uma ampla variedade de tecnologias e
+              metodologias, sempre com foco em excelência, inovação e resultados
+              que agreguem valor real.
+            </p>
+            <p class="mb-6">
+              Tenho sólida experiência na construção de aplicações robustas e
+              escaláveis com React, Angular, Next.js e TypeScript, aliada a um
+              forte entendimento de princípios de UI/UX para garantir que cada
+              detalhe da interface seja funcional e estratégico. Minha vivência
+              com Node.js no backend, assim como com PHP e bancos de dados como
+              MySQL, me proporciona uma visão completa do ciclo de
+              desenvolvimento e integração entre front e back.
+            </p>
+            <p class="mb-6">
+              Estou constantemente em busca de novos desafios que me permitam
+              aplicar minhas habilidades, colaborar em projetos impactantes e
+              continuar evoluindo profissionalmente.
+            </p>
+            <div class="about__buttons">
+              <a
+                download=""
+                href="assets/pdf/Alexa-Cv.pdf"
+                class="button button--flez"
+              >
+                Download CV <i class="uil uil-download-alt button__icon"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Portfólio Section -->
-      <section id="portfolio" class="py-20">
+      <section id="portfolio" class="rounded-xl px-8 mb-16 container mx-auto px-6">
         <h2
           class="text-3xl md:text-4xl font-bold text-[#6B4FBB] text-center mb-12 container mx-auto px-6 md:px-12 py-12"
         >
@@ -405,7 +406,7 @@
       <!-- Serviços Section -->
       <section
         id="servicos"
-        class="py-20 bg-[#6B4FBB] px-8 md:px-16 mb-16 w-full mx-auto px-6 md:px-12 py-12"
+        class="py-20 bg-[#6B4FBB] px-8 md:px-16 mb-16 w-full mx-auto px-6 md:px-12 py-12 flex justify-center items-center"
       >
         <div class="container">
           <h2
@@ -483,12 +484,51 @@
                 ></path>
               </svg>
               <h3 class="text-xl font-semibold text-[#333333] mb-2">
-                Transformação de Design em Código
+                Backend <br />
+                Developer
               </h3>
               <p class="text-[#666666]">
-                Converto seus designs do Figma, Adobe XD ou Sketch em código
-                React ou Angular pixel-perfect.
+                Desenvolvimento de APIs robustas e seguras, com foco em escalabilidade, integração de dados e alta performance.
               </p>
+               <span
+                class="button button--flex button--small button--link services__button"
+              >
+                View More
+                <i class="uil uil-arrow-right button__icon"></i>
+              </span>
+
+              <div class="services__modal">
+                <div class="services__modal-content">
+                  <h4 class="services__modal-title">
+                    Backend <br />
+                    Developer
+                  </h4>
+                  <i class="uil uil-times services__modal-close"></i>
+
+                  <ul class="services__modal-services grid">
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Desenvolvimento de APIs escaláveis com Node.js e PHP</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Integração com bancos de dados</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Criação de sistemas de autenticação e segurança de dados</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Arquitetura e modelagem de dados para alta performance</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Integração com serviços de terceiros (pagamentos, CRMs, ERPs, etc.)</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <!-- Serviço 3 -->
@@ -505,12 +545,51 @@
                 <path d="m19 7-7-5-7 5"></path>
               </svg>
               <h3 class="text-xl font-semibold text-[#333333] mb-2">
-                Otimização de Performance Web
+                Mobile <br />
+                Developer
               </h3>
               <p class="text-[#666666]">
-                Melhoro a velocidade de carregamento e o desempenho geral do seu
-                site para uma melhor experiência do usuário.
+                Criação de aplicativos híbridos para Android e iOS, com foco em performance, usabilidade e integração eficiente.
               </p>
+               <span
+                class="button button--flex button--small button--link services__button"
+              >
+                View More
+                <i class="uil uil-arrow-right button__icon"></i>
+              </span>
+
+              <div class="services__modal">
+                <div class="services__modal-content">
+                  <h4 class="services__modal-title">
+                    Mobile <br />
+                    Developer
+                  </h4>
+                  <i class="uil uil-times services__modal-close"></i>
+
+                  <ul class="services__modal-services grid">
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Desenvolvimento de aplicativos híbridos com Ionic, React Native ou Flutter</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Aplicativos multiplataforma (Android e iOS) com um único código</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Integração com APIs e sistemas backend</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Criação de interfaces intuitivas para experiência mobile</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Publicação e suporte em lojas (Google Play e App Store)</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
