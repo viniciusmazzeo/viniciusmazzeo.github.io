@@ -1,7 +1,7 @@
 // ===== Config =====
 // Opção 1 (recomendada p/ GH Pages): usar Formspree
 // 1) Crie um formulário em https://formspree.io/f/xxxxxx e troque o ENDPOINT abaixo
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-id"; // substitua pelo seu
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xyzdbnlb"; // substitua pelo seu
 
 // Se preferir EmailJS (sem backend), configure aqui
 const USE_EMAILJS = false; // deixe false para usar Formspree
